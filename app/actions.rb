@@ -9,7 +9,7 @@ end
 
 get '/signout' do
 	session[:user_id] = nil
-	redirect '/login'
+	redirect '/signin'
 end
 
 get '/signup' do
