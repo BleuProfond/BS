@@ -43,3 +43,11 @@ post '/signin' do
 		redirect '/'
 	end
 end
+
+get '/project' do
+  erb :'project/project'
+end
+
+get '/project/new' do
+  erb :'project/new'
+end
