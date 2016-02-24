@@ -14,7 +14,7 @@ end
 
 get '/signup' do
 	@user = User.new
-	erb :signup
+	erb :'user/signup'
 end
 
 post '/signup' do
@@ -28,7 +28,7 @@ post '/signup' do
     session[:user_id] = @user.id
     redirect '/'
   else
-    erb :signup
+    erb :'user/signup'
   end
 end
 
