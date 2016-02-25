@@ -7,6 +7,10 @@ get '/signin' do
   erb :'user/signin'
 end
 
+get '/account' do
+  erb :'user/account'
+end
+
 get '/signout' do
 	session[:user_id] = nil
 	redirect '/'
@@ -25,21 +29,19 @@ post '/signup' do
 
   if @user.save
     session[:user_id] = @user.id
-    redirect '/'
+    redirect '/account'
   else
     erb :'user/signup'
   end
 end
 
 post '/signin' do
-	name = params[:name]
 	email = params[:email]
 	password = params[:password]
-	user = User.find_by(name: name)
-	user = User.find_by(email: email)
-	if user.password == password
-		session[:user_id] = user.id
-		redirect '/'
+	@user = User.find_by(email: email, password: password)
+	if @user
+		session[:user_id] = @user.id
+		redirect '/account'
 	end
 end
 
