@@ -57,7 +57,7 @@ get '/project/:id' do
 end
 
 get '/projects' do
-  @projects= Project.all 
+  @project= Project.all 
   erb :'project/project'
 end
 

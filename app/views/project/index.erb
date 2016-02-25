@@ -1,1 +1,22 @@
-<h1>Hi, I'm the public wall page</h1>
+<h1>Public Wall</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @projects.each do |project| %>
+
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project.description %></td>
+      </tr>
+
+    <% end %>
+
+  </tbody>
+</table>
