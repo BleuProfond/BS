@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224221421) do
+ActiveRecord::Schema.define(version: 20160225170739) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "project_name"
     t.string   "people_involved"
     t.string   "project_idea"
     t.string   "project_problem"
-    t.string   "project_solution"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
   end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
