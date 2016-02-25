@@ -45,6 +45,17 @@ post '/signin' do
 	end
 end
 
+post '/project/new' do
+  @project = Project.new(
+    project_name: params[:project_name],
+    project_idea: params[:project_idea],
+    project_problem: params[:project_problem]
+    )
+  @project.save
+  redirect 'user/account'
+
+end
+
 get '/projects' do
   @projects= Project.all 
   erb :'project/project'
