@@ -71,7 +71,6 @@ get '/projects/new' do
   erb :'project/new'
 end
 
-
 get '/projects/index' do 
   @projects = Project.all
   erb :'project/index'

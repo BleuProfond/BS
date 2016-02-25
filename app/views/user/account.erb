@@ -1,6 +1,9 @@
-<h1>User Account Page</h1>
+<h1>User Account</h1>
+<br/>
 
-<form action="/projects/new" method="get">
+<a href='/projects/new'>Create Project</a>
+
+<form action="/projects/new" 	method="get">
   <button name="New Project"
 
   <nav class="navbar navbar-default">
@@ -10,3 +13,4 @@
 <a href='project/<%= project.id %>'><%= project.project_name %></a>
 
 <% end %>
+
