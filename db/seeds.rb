@@ -37,7 +37,7 @@ project = Project.create!(
   user_id: '2'
   )
 project = Project.create!(
-  project_name: 'Gaming Addition',
+  project_name: 'Gaming Addiction',
   project_idea: 'Games to play while im sleeping.',
   project_problem: 'Non-stop gaming 24/7. What do?',
   user_id: '2'
