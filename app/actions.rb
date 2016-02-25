@@ -1,4 +1,10 @@
 # Homepage (Root path)
+helpers do
+  def current_user
+    User.find(session[:user_id]) if session[:user_id]
+  end
+end
+
 get '/' do
   erb :index
 end
@@ -43,6 +49,11 @@ post '/signin' do
 		session[:user_id] = @user.id
 		redirect '/account'
 	end
+end
+
+get '/project/:id' do
+  @project = Project.find(params[:id])
+  erb :'project/project'
 end
 
 get '/projects' do
