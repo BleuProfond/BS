@@ -54,3 +54,8 @@ get '/projects/new' do
   erb :'project/new'
 end
 
+
+get '/projects/index' do 
+  erb :'project/index'
+end 
+
