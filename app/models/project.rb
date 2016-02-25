@@ -1,2 +1,4 @@
 class Project < ActiveRecord::Base 
-end 
+
+  belongs_to :users
+end

@@ -9,7 +9,7 @@ end
 
 get '/signout' do
 	session[:user_id] = nil
-	redirect '/signin'
+	redirect '/'
 end
 
 get '/signup' do
@@ -44,10 +44,10 @@ post '/signin' do
 	end
 end
 
-get '/project' do
+get '/projects' do
   erb :'project/project'
 end
 
-get '/project/new' do
+get '/projects/new' do
   erb :'project/new'
 end
