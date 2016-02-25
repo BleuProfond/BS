@@ -12,23 +12,23 @@
 <% end %>
 
 <form method="post" action="/signup">
-	<div>
+	<div class = "panel panel-primary">
 		<label>Name:</label>
 		    <input type="text" name="name" value="<%= @user.email %>">
 	</div>
-	<div>
+	<div class = "panel panel-primary">
 		<label>Email:</label>
 		    <input type="text" name="email" value="<%= @user.email %>">
 	</div>
-	<div>
+	<div class = "panel panel-primary">
 		<label>Password:</label>
 		    <input type="password" name="password" value="">
 	</div>
-  <div>
+  <div class = "panel panel-primary">
     <label>Confirm Password:</label>
         <input type="password" name="password_confirmation" value="">
   </div>
-	<div>
+	<div class = "panel panel-primary">
 		<input type="submit" value="Submit">
 	</div>
 </form>
