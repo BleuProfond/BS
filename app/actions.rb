@@ -14,6 +14,7 @@ get '/signin' do
 end
 
 get '/account' do
+  @user = current_user
   erb :'user/account'
 end
 
