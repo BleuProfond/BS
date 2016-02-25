@@ -14,6 +14,7 @@ get '/signin' do
 end
 
 get '/account' do
+  @user = current_user
   erb :'user/account'
 end
 
@@ -66,17 +67,12 @@ post '/project/new' do
   redirect 'user/account'
 end
 
-get '/projects' do
-  @project= Project.all 
-  erb :'project/project'
-end
-
 get '/projects/new' do
   erb :'project/new'
 end
 
-
 get '/projects/index' do 
+  @projects = Project.all
   erb :'project/index'
 end 
 

@@ -1,8 +1,16 @@
+<h1>User Account</h1>
+<br/>
 
-<h1>user account page </h1>
+<a href='/projects/new'>Create Project</a>
 
-<form action="/projects/new" method="get">
+<form action="/projects/new" 	method="get">
   <button name="New Project"
 
   <nav class="navbar navbar-default">
+
+<% @user.projects.each do |project| %>
+
+<a href='project/<%= project.id %>'><%= project.project_name %></a>
+
+<% end %>
 

@@ -1,22 +1,9 @@
-<h1>Public Wall</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
+<h1>Hi, I'm the public wall page</h1>
 
-    <% @projects.each do |project| %>
+<% @projects.each do |project| %>
 
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-      </tr>
+<a href='/project/<%= project.id %>'><%= project.project_name %></a>
 
-    <% end %>
+<% end %>
 
-  </tbody>
-</table>
