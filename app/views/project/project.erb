@@ -1,5 +1,24 @@
 <h1> Projects </h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
 
+    <% @projects.each do |project| %>
+
+      <tr>
+        <a href="/project/new"><td><%= project.project_name %></td></a>
+        <a href="/project/new"><td><%= project.project_idea %></td>
+      </tr>
+
+    <% end %>
+
+  </tbody>
+</table>
 
 

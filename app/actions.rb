@@ -46,6 +46,7 @@ post '/signin' do
 end
 
 get '/projects' do
+  @projects= Project.all 
   erb :'project/project'
 end
 
