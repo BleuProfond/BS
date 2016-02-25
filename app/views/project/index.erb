@@ -1,1 +1,7 @@
 <h1>Hi, I'm the public wall page</h1>
+
+<% @projects.each do |project| %>
+
+<a href='project/<%= project.id %>'><%= project.project_name %></a>
+
+<% end %>
