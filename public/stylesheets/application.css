@@ -13,8 +13,7 @@ body {
 }
 
 nav {
-  position: fixed;
-  display: inline-block;
+  position: relative;
 }
 
 .jumbotron {
@@ -35,11 +34,16 @@ nav {
 }
 
 .user_name{
-    font-size:14px;
-    font-weight: bold;
+  font-size:14px;
+  font-weight: bold;
 }
 
 .comments-list .media{
-    border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
 }
 
+.newproject {
+  width: 35%;
+  padding: 10px;
+  margin: auto;
+}

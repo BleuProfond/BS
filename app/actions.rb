@@ -61,6 +61,7 @@ get '/project/:id' do
 end
 
 get '/projects/new' do
+  @project = Project.new
   erb :'project/new'
 end
 
