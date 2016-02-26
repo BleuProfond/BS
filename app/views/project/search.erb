@@ -1,0 +1,9 @@
+<h1> result page </h1>
+
+<% @result.each do |project| %>
+
+<a href='project/<%= project.id %>'><%= project.project_name %></a>
+
+<% end %>
+
+

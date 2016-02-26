@@ -102,3 +102,19 @@ post '/project/:id/comment/new' do
   redirect ('/project/' + params[:id].to_s)
 end
 
+# get '/results' do
+#   erb :'project/results'
+# end
+
+get '/search' do
+  @projects = Project.all
+  @query = params[:query]
+  @result = []
+  @projects.each do |project|
+    if project.tags.split(", ").any? { |tag| tag == @query }
+      @result << project
+    end
+  end
+  erb :'project/search'
+end
+
