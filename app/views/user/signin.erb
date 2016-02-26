@@ -1,7 +1,27 @@
-<h1>Sign-in to User Account</h1>
+<h1>Sign-in to Account</h1>
 
-<form action="/signin" method="POST">
-  Email: <input name="email" type="text" /> <br/>
-  Password: <input name="password" type="password" /> <br/>
-  <input type="submit" value="Submit" />
-</form>
+<% if @user.errors.any? %>
+  <div>
+    <strong>Some issues with your user, please fix them:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |user| %>
+        <li><%= user %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="signin">
+  <form action="/signin" method="POST">
+    <div>
+      <label>Email:</label>
+        <input name="email" type="text" />
+    </div>
+    <br/>
+    <div>
+      <label>Password:</label>
+        <input name="password" type="password" />
+    </div>
+    <br/>
+    <input type="submit" value="Submit" />
+  </form>
+</div>
