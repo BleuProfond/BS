@@ -61,17 +61,16 @@ end
 
 get '/project/:id' do
   @project = Project.find(params[:id])
-
   erb :'project/project'
 end
 
 get '/projects/new' do
+  @user = current_user
   @project = Project.new
   erb :'project/new'
 end
 
 post '/projects' do
-  @user = current_user
   @project = Project.new(
     project_name: params[:project_name],
     project_idea: params[:project_idea],
