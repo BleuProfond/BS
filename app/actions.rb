@@ -57,18 +57,24 @@ get '/project/:id' do
   erb :'project/project'
 end
 
-post '/project/new' do
+get '/projects/new' do
+  erb :'project/new'
+end
+
+post '/projects' do
+  @user = current_user
   @project = Project.new(
     project_name: params[:project_name],
     project_idea: params[:project_idea],
-    project_problem: params[:project_problem]
+    project_problem: params[:project_problem],
+    user_id: @user.id
     )
   @project.save
-  redirect 'user/account'
-end
-
-get '/projects/new' do
-  erb :'project/new'
+  if @project.save
+    redirect '/account'
+  else
+    erb :'project/new'
+  end
 end
 
 get '/projects/index' do 
