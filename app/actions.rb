@@ -1,4 +1,4 @@
-# Homepage (Root path)
+ # Homepage (Root path)
 helpers do
   def current_user
     User.find(session[:user_id]) if session[:user_id]
@@ -54,6 +54,7 @@ end
 
 get '/project/:id' do
   @project = Project.find(params[:id])
+
   erb :'project/project'
 end
 
@@ -75,4 +76,15 @@ get '/projects/index' do
   @projects = Project.all
   erb :'project/index'
 end 
+
+post '/project/:id/comment/new' do 
+  @project = Project.find(params[:id])
+  @comment = Comment.new(
+    comments: params[:comment],
+    user_id: session[:user_id],
+    project_id: params[:id]
+   )
+  @comment.save 
+  redirect ('/project/' + params[:id].to_s)
+end
 
