@@ -1,10 +1,12 @@
+<h1>Public Wall</h1>
 
-<h1>Hi, I'm the public wall page</h1>
+<h5>Here is a list of all current project discussions.</h5>
+
+<br/>
 
 <% @projects.each do |project| %>
-
-<a href='/project/<%= project.id %>'><%= project.project_name %></a>
-
+	<h1><a href='/project/<%= project.id %>'><%= project.project_name %></a></h1>
+	<br/>
 <% end %>
 
 
