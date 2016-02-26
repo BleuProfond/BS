@@ -13,17 +13,6 @@ user = User.create!(
   password: '12345'
 )
 
-# 4.times do
-#   project_name = Faker::Book.title
-#   project_idea = Faker::Company.bs
-#   project_problem = Faker::Lorem.sentence
-#   user.projects.create!(
-#     project_name: project_name,
-#     project_idea: project_idea,
-#     project_problem: project_problem
-#   )
-# end
-
 project = Project.create!(
   project_name: 'Super Clothes',
   project_idea: 'I want pants that fly',

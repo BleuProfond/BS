@@ -10,6 +10,7 @@ get '/' do
 end
 
 get '/signin' do
+  @user = User.new
   erb :'user/signin'
 end
 
@@ -17,6 +18,7 @@ get '/account' do
   @user = current_user
   erb :'user/account'
 end
+# make sure to define the instance variable in get and post.
 
 get '/signout' do
 	session[:user_id] = nil

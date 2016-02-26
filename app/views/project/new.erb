@@ -1,5 +1,16 @@
 <h1>Create New Project</h1>
 
+<% if @project.errors.any? %>
+  <div>
+    <strong>There are some issues with the project creation:</strong>
+    <ul>
+      <% @project.errors.full_messages.each do |project| %>
+        <li><%= project %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <form method="post" action ="/projects">
 
 <div class = "panel panel-primary">
