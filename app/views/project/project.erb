@@ -1,28 +1,30 @@
-<ul>
-  <li><%= @project.project_name %></li>
-  <li>My project is about: <%= @project.project_idea %></li>
-  <li>I'm stuck on: <%= @project.project_problem %></li>
-</ul>
+<div>
+  <h5>Project Name: <%= @project.project_name %></h5>
+  <h5>My project is about: <%= @project.project_idea %></h5>
+  <h5>What I'm stuck on: <%= @project.project_problem %></h5>
+</div>
 
-<form action=<%="/project/" + @project.id.to_s + "/comment/new"%> method="post">
-  <label>Potential Solutions</label>
-  <textarea rows="8" cols="130" name="comment"></textarea>
+<div class="solutions">
+  <form action=<%="/project/" + @project.id.to_s + "/comment/new"%> method="post">
+    <h4>Potential Solutions</h4>
+    <textarea rows="8" cols="130" name="comment"></textarea>
+  </form>
+  <br/>
   <input class="btn btn-info" type="submit" value="Sumbit Feedback">
-</form>
-
+</div>
 
 <table>
   <thead>
     <tr>
-      <th>Comment</th>
       <th>User</th>
+      <th>Comment</th>
     </tr>
   </thead>
   <tbody>
     <% @project.comments.each do |comment| %>
       <tr>
-        <td><%=comment.comments%></td>
         <td><%=comment.user_id%></td>
+        <td><%=comment.comments%></td>
       </tr>
     <% end %>
   </tbody>
