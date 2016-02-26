@@ -11,6 +11,7 @@ end
 
 get '/signin' do
   @user = User.new
+  @incorrect = false
   erb :'user/signin'
 end
 
@@ -51,6 +52,10 @@ post '/signin' do
 	if @user
 		session[:user_id] = @user.id
 		redirect '/account'
+  else 
+    # session[:user_id] = nil
+    @incorrect = true
+    erb :'user/signin'
 	end
 end
 
@@ -61,6 +66,7 @@ get '/project/:id' do
 end
 
 get '/projects/new' do
+  @project = Project.new
   erb :'project/new'
 end
 

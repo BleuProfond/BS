@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :projects
   has_many :comments
 
-  validates :name, presence: true, length: {maximum: 30}
-  validates :email, presence: true, length: {maximum: 30}
-  validates :password, presence: true, length: {minimum: 4}
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
 end 

@@ -1,15 +1,9 @@
 <h1>Sign-in to Account</h1>
 
-<% if @user.errors.any? %>
-  <div>
-    <strong>Some issues with your user, please fix them:</strong>
-    <ul>
-      <% @user.errors.full_messages.each do |user| %>
-        <li><%= user %></li>
-      <% end %>
-    </ul>
-  </div>
+<% if @incorrect %>
+  <h2> Login information does not match any account </h2>
 <% end %>
+
 <div class="signin">
   <form action="/signin" method="POST">
     <div>
