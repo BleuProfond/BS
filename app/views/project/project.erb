@@ -16,7 +16,7 @@
 <% @project.comments.each do |comment| %>
       <ul>
         <li><textarea class="form-control" rows="3"><%=comment.comments%></textarea></li>
-        <li><td><%=comment.id%></td></li>
+        <li><td><%=comment.user.name%></td></li>
       </ul>
       <form action=<%="/project/" + @project.id.to_s + "/comment/" + comment.id.to_s%> method="post">
         <input type="hidden" name="comment" value="delete">
