@@ -3,6 +3,14 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  margin: auto;
+}
+
+h5 {
+  margin: auto;
+}
+
 label {
   display: block;
   text-align: left;
@@ -48,11 +56,12 @@ nav {
   margin: auto;
 }
 
-p {
-  text-align: center;
+.solutions {
+  margin: auto;
+  width: 90%;
 }
 
-h5 {
+p {
   text-align: center;
 }
 
@@ -66,12 +75,10 @@ ul {
   margin: auto;
 }
 
-.solutions {
-  margin: auto;
-  width: 90%;
-}
-
 table {
   margin: auto;
 }
 
+.button {
+  margin: auto;
+}

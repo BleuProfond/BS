@@ -20,6 +20,7 @@ project = Project.create!(
   user_id: '1',
   tags: "clothes, fly, pants"
   )
+
 project = Project.create!(
   project_name: 'Cookie Monster',
   project_idea: 'Where can I find more cookies?',
@@ -27,6 +28,7 @@ project = Project.create!(
   user_id: '2',
   tags: "cookie, eating, monster"
   )
+
 project = Project.create!(
   project_name: 'Gaming Addiction',
   project_idea: 'Games to play while im sleeping.',
