@@ -1,18 +1,26 @@
 <h1>User Account</h1>
 <br/>
 
-<h1><a href='/projects/new'>Create Project</a></h1>
+<div class="button">
+	<form action="/projects/new" method="get">
+		<button name="New Project"
+		<nav class="navbar navbar-default">
+		<h3><a href='/projects/new'>Create Project</a></h3>
+		</button>
+	</form>
+</div>
 
-<h4>Your Projects</h4>
+<h1>Your Projects</h1>
+<br/>
 
-<form action="/projects/new" 	method="get">
-  <button name="New Project"
-
-  <nav class="navbar navbar-default">
-
-<% @user.projects.each do |project| %>
-
-<a href='project/<%= project.id %>'><%= project.project_name %></a>
-
-<% end %>
-
+<div class="button">
+  	<% @user.projects.each do |project| %>
+  	<form action="project/<%= project.id %>" 	method="get">
+  	<button name="Project ID"
+		<nav class="navbar navbar-default">
+		<h3><a href='project/<%= project.id %>'><%= project.project_name %></a></h3>
+		</button>
+		<br/>
+		<% end %>
+	</form>
+</div>

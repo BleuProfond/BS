@@ -1,8 +1,8 @@
 <h1>Create Account</h1>
 
 <% if @user.errors.any? %>
-  <div>
-    <strong>There are some issues with the user creation:</strong>
+  <div class="error">
+    <strong>There are some issues with creation:</strong>
     <ul>
       <% @user.errors.full_messages.each do |user| %>
         <li><%= user %></li>

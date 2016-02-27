@@ -8,7 +8,10 @@
   <form action=<%="/project/" + @project.id.to_s + "/comment/new"%> method="post">
     <h4>Potential Solutions</h4>
     <textarea class="form-control" rows="8" cols="130" name="comment"></textarea>
+    <br/>
+    <div class="button">
      <input class="btn btn-info" type="submit" value="Sumbit Feedback">
+    </div>
   </form>
   <br>
 </div>
@@ -20,7 +23,10 @@
       </ul>
       <form action=<%="/project/" + @project.id.to_s + "/comment/" + comment.id.to_s%> method="post">
         <input type="hidden" name="comment" value="delete">
-         <input class="btn btn-info" type="submit" value="Delete Comment">
+        <br/>
+        <div class="button">
+          <input class="btn btn-info" type="submit" value="Delete Comment">
+        </div>
       </form>
 <% end %>
 
