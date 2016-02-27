@@ -71,11 +71,13 @@ get '/projects/new' do
 end
 
 post '/projects' do
+  @user = current_user
   @project = Project.new(
     project_name: params[:project_name],
     project_idea: params[:project_idea],
     project_problem: params[:project_problem],
-    user_id: @user.id
+    user_id: @user.id,
+    tags: params[:tag1] + ", " + params[:tag2] + ", " + params[:tag3]
     )
   @project.save
   if @project.save
