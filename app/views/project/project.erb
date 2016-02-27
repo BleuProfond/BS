@@ -3,12 +3,16 @@
   <h5>My project is about: <%= @project.project_idea %></h5>
   <h5>What I'm stuck on: <%= @project.project_problem %></h5>
 </div>
+
 <% unless @project.user_id == current_user.id %>
   <div class="solutions">
     <form action=<%="/project/" + @project.id.to_s + "/comment/new"%> method="post">
       <h4>Potential Solutions</h4>
       <textarea class="form-control" rows="8" cols="130" name="comment"></textarea>
-       <input class="btn btn-info" type="submit" value="Sumbit Feedback">
+      <br/>
+      <div class="button">
+      <input class="btn btn-info" type="submit" value="Sumbit Feedback">
+      </div>
     </form>
     <br>
   </div>
@@ -21,7 +25,10 @@
       </ul>
       <form action=<%="/project/" + @project.id.to_s + "/comment/" + comment.id.to_s%> method="post">
         <input type="hidden" name="comment" value="delete">
-         <input class="btn btn-info" type="submit" value="Delete Comment">
+        <br/>
+        <div class="button">
+          <input class="btn btn-info" type="submit" value="Delete Comment">
+        </div>
       </form>
 <% end %>
 
