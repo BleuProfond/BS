@@ -1,9 +1,11 @@
 <h1>Search Result</h1>
 
-<% @result.each do |project| %>
-
-<a href='project/<%= project.id %>'><%= project.project_name %></a>
-
+<% unless @result == [] %>
+  <% @result.each do |project| %>
+    <a href='project/<%= project.id %>'><%= project.project_name %></a>
+  <% end %>
+<% else %>
+  <div class="results"><h3>No matches Found</h3></div>
 <% end %>
 
 
