@@ -16,7 +16,7 @@ get '/signin' do
 end
 
 get '/account' do
-  @user = current_user
+  @user = User.find(session[:user_id]) if session[:user_id]
   erb :'user/account'
 end
 # make sure to define the instance variable in get and post.
@@ -66,7 +66,7 @@ end
 
 get '/projects/new' do
   @user = current_user
-  @project = Project.new
+  @project = Project.new 
   erb :'project/new'
 end
 
@@ -115,5 +115,10 @@ get '/search' do
     end
   end
   erb :'project/search'
+end 
+
+post '/project/:id/comment/:comment_id' do 
+  Comment.find(params[:comment_id]).destroy
+  redirect ('/project/' + params[:id].to_s)
 end
 
