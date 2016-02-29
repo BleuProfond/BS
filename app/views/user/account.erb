@@ -2,12 +2,12 @@
 <br/>
 
 <div class="button">
-	<form action="/projects/new" method="get">
+<!-- 	<form action="/projects/new" method="get">
 		<button name="New Project"
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default"> -->
 		<h3><a href='/projects/new'>Create Project</a></h3>
-		</button>
-	</form>
+<!-- 		</button>
+	</form> -->
 </div>
 
 <h1>Your Projects</h1>
@@ -15,11 +15,11 @@
 
 <div class="button">
   	<% @user.projects.each do |project| %>
-  	<form action="project/<%= project.id %>" 	method="get">
+<!--   	<form action="project/<%= project.id %>" 	method="get">
   	<button name="Project ID"
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default"> -->
 		<h3><a href='project/<%= project.id %>'><%= project.project_name %></a></h3>
-		</button>
+<!-- 		</button> -->
 		<br/>
 		<% end %>
 	</form>
