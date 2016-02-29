@@ -27,7 +27,7 @@ nav {
 
 .jumbotron {
   position: relative;
-  background: #D8D8D8 url("jumbotron-bg.png") center center;
+  background: #D8D8D8 image("mindmap.jpg") center center;
   width: 100%;
   height: 100%;
   background-size: cover;
